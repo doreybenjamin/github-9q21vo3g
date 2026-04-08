@@ -10,30 +10,7 @@
     <slot />
 
     <script>
-      import Lenis from "lenis"
-
-      let lenis
-
-      const init = () => {
-        lenis = new Lenis({
-          duration: 1.2,
-        })
-
-        function raf(time) {
-          if (lenis) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-          }
-        }
-
-        requestAnimationFrame(raf)
-      }
-
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", init)
-      } else {
-        init()
-      }
+      import "../scripts/layout-base.ts"
     </script>
   </body>
 </html>
